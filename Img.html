@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Campus Images</title>
+    <style>
+        /* Basic reset and styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+        }
+
+        /* Gallery Container */
+        .gallery {
+            display: grid;
+            /* Using grid for layout */
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            /* Automatically adjusts based on screen size */
+            gap: 20px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Styling the images */
+        .gallery img {
+            width: 100%;
+            /* Makes images responsive */
+            height: auto;
+            border-radius: 8px;
+            /* Rounded corners for images */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            /* Adding shadow to images */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            /* Smooth transition effect */
+        }
+
+        /* Hover effect for images */
+        .gallery img:hover {
+            transform: scale(1.05);
+            /* Slight zoom effect on hover */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            /* More prominent shadow on hover */
+        }
+
+        /* Making images responsive */
+        @media (max-width: 768px) {
+            .gallery {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+                /* Adjusts for smaller screens */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery {
+                grid-template-columns: 1fr;
+                /* Stack images in one column for mobile */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="gallery">
+        <img src="img1.jpg" alt="library img">
+        <img src="img2.jpg" alt="ambedakar bhavan">
+        <img src="campus.jpg" alt="campus img">
+        <img src="img4.jpg" alt="President of india">
+    </div>
+</body>
+
+</html>
